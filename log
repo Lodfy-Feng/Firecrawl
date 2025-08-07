@@ -1,2 +1,2 @@
 [2025.8.06|08:30] 目前着手解决Firecrawl与Dify 两个docker上运行的程序无法握手的问题——即按照docker-compose.yaml文件的API_Key和Base_URL进行连接时，出现了握手失败的情况。
-[2025.8.06|16:10:00] 尝试修改API_Key并重启Firecrawl，但docker-cpmpose up -d --build命令出现问题，卡顿在RUN npx playwright install --with-deps。怀疑是代理出现问题，进行排查和探索。
+[2025.8.06|16:10:00] 尝试修改API_Key并重启Firecrawl，但docker-cpmpose up -d --build命令出现问题，卡顿在RUN npx playwright install --with-deps。怀疑是代理出现问题，进行排查和探索。修改host.docker.internal为127.0.0.1，解决了这一问题。
