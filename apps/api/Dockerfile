@@ -5,6 +5,11 @@ FROM node:22-slim AS base
 ENV http_proxy=http://127.0.0.1:20171
 ENV https_proxy=http://127.0.0.1:20171
 
+RUN npm config set proxy http://127.0.0.1:20171 && \
+    npm config set https-proxy http://127.0.0.1:20171
+
+RUN npx playwright install --with-deps
+
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 

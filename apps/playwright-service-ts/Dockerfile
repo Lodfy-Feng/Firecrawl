@@ -16,8 +16,7 @@ COPY . .
 ENV PLAYWRIGHT_BROWSERS_PATH=/tmp/.cache
 
 # 安装 Playwright 浏览器及依赖
-RUN npx playwright install --with-deps
-
+RUN DEBUG=pw:browser-download npx playwright install --with-deps
 # 构建项目
 RUN npm run build
 
